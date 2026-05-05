@@ -4,18 +4,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo is
 
-A collection of Claude agent prompt definitions — structured markdown files that describe how an agent should behave, what files to read, what checks to run, and how to format its output. The primary file is `audit.md`.
+A Claude Code skills plugin that performs a deep pre-release audit of React Native apps. It is structured as a standard Claude plugin with a skill definition, plugin manifest, and marketplace metadata.
 
-## Current agents
+## Plugin structure
 
-### `audit.md` — RN Pre-Release Audit Agent
+```
+.claude-plugin/
+  plugin.json          — plugin manifest (name, version, skills pointer)
+  marketplace.json     — marketplace listing metadata
+skills/
+  rn-prerelease-audit/
+    SKILL.md           — the audit skill (invokable as /rn-prerelease-audit)
+```
 
-A system prompt for a React Native app pre-release audit agent. It instructs the agent to:
+## Current skills
 
-1. **Read project files** — `AndroidManifest.xml`, `build.gradle`, `Info.plist`, `app.json`, `Podfile`, `package.json`, and source files for permission usage.
-2. **Run structured checks** across 10 categories: permissions, icons/assets, splash screen, iOS privacy descriptions, network security, hardcoded secrets, New Architecture flags, deep links, deprecated dependencies, Android activity config, version consistency, and screen orientation.
+### `skills/rn-prerelease-audit/SKILL.md` — RN Pre-Release Audit
+
+A Claude Code skill that audits a React Native app before App Store or Play Store submission. It instructs the agent to:
+
+1. **Read project files** — `AndroidManifest.xml`, `build.gradle`, `Info.plist`, `app.json`, `Podfile`, `package.json`, and source files for permission and analytics usage.
+2. **Run 30+ structured checks** across 20+ categories: ATT, Sign in with Apple, auth session handling, payments/billing, permissions, icons, splash screen, iOS privacy descriptions, network security, hardcoded secrets, crash monitoring, New Architecture flags, network resilience, deep links, deprecated dependencies, account deletion, privacy policy, Target SDK, back-press handling, Privacy Manifests, ProGuard, export compliance, Hermes, bundle size, UI safety, Android activity config, version consistency, and screen orientation.
 3. **Output a formatted report** with severity tiers (🔴 errors, 🟡 warnings, 🔵 info, ✅ passed) and a prioritized next-steps list.
 
-## How to use an agent prompt
+## How to install and use
 
-Paste the contents of a `.md` file as the system prompt (or first user message) when starting a Claude conversation, then point it at the target React Native project.
+Install as a Claude Code plugin, then run inside any React Native project:
+
+```
+/rn-prerelease-audit
+```

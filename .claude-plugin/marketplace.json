@@ -1,0 +1,16 @@
+{
+  "name": "rn-prerelease-audit",
+  "displayName": "RN Pre-Release Audit",
+  "description": "Deep pre-release audit for React Native apps covering 30+ App Store and Play Store compliance checks — permissions, secrets, Hermes, ProGuard, PrivacyInfo.xcprivacy, ATT, back-press handling, export compliance, and more.",
+  "category": "workflow",
+  "tags": [
+    "react-native",
+    "ios",
+    "android",
+    "app-store",
+    "play-store",
+    "audit",
+    "compliance",
+    "expo"
+  ]
+}

@@ -96,7 +96,7 @@ Fix: Add NSUserTrackingUsageDescription key to ios/MyApp/Info.plist with a user-
 
 ### Option 2 — Claude.ai
 
-1. Copy the full contents of [`audit.md`](./audit.md)
+1. Copy the full contents of [`SKILL.md`](./skills/rn-prerelease-audit/SKILL.md)
 2. Paste as the **system prompt** when starting a new Claude conversation
 3. Type: `Audit the React Native project at /path/to/your/app`
 
@@ -141,7 +141,7 @@ Fix: Add NSUserTrackingUsageDescription key to ios/MyApp/Info.plist with a user-
 
 Found a new rejection reason not covered here? Open a PR:
 
-1. Add the check to `audit.md` following the existing pattern
+1. Add the check to `skills/rn-prerelease-audit/SKILL.md` following the existing pattern
 2. Add a row to the checks table in this README
 3. Include the severity (error / warning / info) and the exact store policy it maps to
 

@@ -1,0 +1,23 @@
+{
+  "name": "rn-prerelease-audit",
+  "description": "Deep pre-release audit for React Native apps covering 30+ App Store and Play Store compliance checks — permissions, secrets, Hermes, ProGuard, PrivacyInfo.xcprivacy, ATT, back-press handling, export compliance, and more.",
+  "version": "1.0.0",
+  "author": {
+    "name": "bharmalhusen"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "app-store",
+    "play-store",
+    "audit",
+    "compliance",
+    "expo",
+    "hermes",
+    "proguard",
+    "permissions"
+  ],
+  "skills": ["./skills/rn-prerelease-audit"]
+}
