@@ -1,0 +1,31 @@
+spec_version: "0.1.0"
+name: rn-prerelease-audit
+version: 1.0.0
+description: >
+  A Claude Code agent skill that performs a deep, automated pre-release audit of
+  React Native apps before App Store and Google Play submission. Runs 30+ structured
+  compliance checks across 20 categories — permissions, secrets, ATT, Sign in with
+  Apple, IAP/billing, Privacy Manifests, ProGuard, Hermes, bundle size, version
+  consistency, and more — then outputs a prioritised severity report (errors,
+  warnings, info, passed) so developers can fix every rejection risk before
+  submitting to the stores.
+author: bharmalhusen
+license: MIT
+
+model:
+  preferred: anthropic:claude-sonnet-4-6
+
+skills:
+  - rn-prerelease-audit
+
+runtime:
+  max_turns: 80
+  timeout: 600
+
+compliance:
+  risk_tier: standard
+  supervision:
+    human_in_the_loop: none
+    kill_switch: false
+  data_governance:
+    pii_handling: none
